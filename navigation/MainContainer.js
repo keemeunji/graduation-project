@@ -8,12 +8,14 @@ import HomeScreen from './screens/HomeScreen';
 import VideoScreen from './screens/VideoScreen';
 import ReportScreen from './screens/ReportScreen';
 import ChatScreen from './screens/ChatScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 // Screen names
-const homeName = '홈';
-const videoName = '비디오캠';
-const reportName = '감정 결과 리포트';
-const chatName = '아바타톡';
+const homeName = 'Home';
+const videoName = 'Vide';
+const reportName = 'Report';
+const chatName = 'Chat';
+const profileName = 'Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +37,8 @@ export default function MainContainer() {
                             iconName = focused ? 'document' : 'document-outline';
                         } else if (rn === chatName) {
                             iconName = focused ? 'chatbox' : 'chatbox-outline';
+                        } else if (rn === profileName) {
+                            iconName = focused ? 'person' : 'person-outline';
                         }
 
                         return <Ionicons name={iconName} size={size} color={color} />
@@ -52,6 +56,7 @@ export default function MainContainer() {
                 <Tab.Screen name={videoName} component={VideoScreen} />
                 <Tab.Screen name={reportName} component={ReportScreen} />
                 <Tab.Screen name={chatName} component={ChatScreen} />
+                <Tab.Screen name={profileName} component={ProfileScreen} />
             
             </Tab.Navigator>
         </NavigationContainer>
